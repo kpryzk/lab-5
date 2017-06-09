@@ -9,9 +9,9 @@ For TODO item, be sure to change it to say DONE when you have successfully compl
 
 // TODO: Write your code here
 function sum(a,b) {
-  var sum = a + b;
-  var message = 'The sum of ' + a + ' and ' + b + ' is ' + sum + '.';
-  return [sum, message];
+  var innerSum = a + b;
+  var message = 'The sum of ' + a + ' and ' + b + ' is ' + innerSum + '.';
+  return [innerSum, message];
 }
 
 // TODO: Here is the test for sum(); uncomment it to run it
@@ -27,9 +27,9 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 function multiply(a,b){ //eslint-disable-line
-  var multiply = a * b;
-  var message = 'The product of ' + a + ' and ' + b + ' is ' + multiply + '.';
-  return [multiply, message];
+  var innerMultiply = a * b;
+  var message = 'The product of ' + a + ' and ' + b + ' is ' + innerMultiply + '.';
+  return [innerMultiply, message];
 }
 
 // TODO: Here is the test for multiply(); uncomment it to run it
@@ -47,11 +47,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // TODO: Write your code here
 function sumAndMultiply(a,b,c){ //eslint-disable-line
-
+  var sum2 = sum(a, b)[0];
+  var sum3 = sum(sum2, c)[0];
+  var multiply2 = multiply(a, b)[0];
+  var multiply3 = multiply(multiply2, c)[0];
+  var message = a + ' and ' + b + ' and ' + c + ' sum to ' + sum3 + '.';
+  var message2 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiply3 + '.';
+  return [sum3, multiply3, message, message2];
 }
+sumAndMultiply(4, 7, 5);
 
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
