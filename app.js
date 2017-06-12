@@ -32,6 +32,11 @@ function multiply(a,b){ //eslint-disable-line
   return [innerMultiply, message];
 }
 
+// can also make as easy as:
+// function multiply(a,b){
+//   return [a * b, 'The product of ' + a + ' and ' + b + ' is ' + (a * b) + '.'];
+// }
+
 // TODO: Here is the test for multiply(); uncomment it to run it
 testMultiply(5,9);
 
@@ -60,6 +65,12 @@ sumAndMultiply(4, 7, 5);
 // TODO: Here is the test for sumAndMultiply(); uncomment it to run it
 testSumAndMultiply(4,7,5);
 
+//alternately, I could''ve done...
+// function sumAndMultiply(a,b,c){
+//   var add = sum(sum(a,b)[0],c)[0];
+//   var product = multiply(multiply(a,b)[0],c)[0];
+// }
+
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
@@ -77,9 +88,10 @@ function sumArray(testArray){ //eslint-disable-line
   var sumArr2 = sum(sumArr, testArray[2])[0];
   var message = testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + sumArr2 + ' is their sum.' ;
   console.log(testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + sumArr2 + ' is their sum.');
-  return[sumArr2, message];
+  return [sumArr2, message];
 }
 sumArray(testArray);
+
 // TODO: Here is the test for sumArray(); uncomment it to run it
 testSumArray(testArray);
 
@@ -98,9 +110,18 @@ function multiplyArray(testArray){ //eslint-disable-line
   var multArr2 = multiply(multArr, testArray[2])[0];
   var message = 'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + multArr2 + '.';
   console.log('The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + multArr2 + '.');
-  return[multArr2, message];
+  return [multArr2, message];
 }
 multiplyArray(testArray);
+
+// as a for loop:
+// function multiplyArray(testArray){
+//   var product = 1;
+//   for(var i = 1; i < testArray.length + 1; i++) {
+//     product = multiply(product, testArray[i])[0];
+//   }
+// }
+// multiplyArray([4, 5, 6, 7]);
 
 // Here is the test for multiplyArray(); uncomment it to run it
 testMultiplyArray(2,3,4);
